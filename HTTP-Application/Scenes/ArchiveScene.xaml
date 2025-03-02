@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="HTTP_Application.Scenes.ArchiveScene"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HTTP_Application.Scenes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Height="30" Text="Archived Threads" Foreground="White" HorizontalAlignment="Center"
+                   Margin="0,10,0,0" FontSize="16"></TextBlock>
+        <ListView Background="#141414" Foreground="White" Name="ThreadList" Width="480" Height="390" ItemsSource="{Binding ArchivedThreads}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn HeaderContainerStyle="{StaticResource HeaderTheme}" Width="170" DisplayMemberBinding="{Binding Source}" Header="Source"/>
+                    <GridViewColumn HeaderContainerStyle="{StaticResource HeaderTheme}" Width="170" DisplayMemberBinding="{Binding Destination}" Header="Destination"/>
+                    <GridViewColumn HeaderContainerStyle="{StaticResource HeaderTheme}" Width="140" DisplayMemberBinding="{Binding Status}" Header="Status"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</UserControl>
