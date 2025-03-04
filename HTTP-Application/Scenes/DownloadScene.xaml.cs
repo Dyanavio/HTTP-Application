@@ -68,8 +68,8 @@ namespace HTTP_Application.Scenes
         {
             InitializeComponent();
             DataContext = this;
-            Destination = @"D:\FilesForProject\DestinationFolder\video.mp4";
-            Source = "https://videos.pexels.com/video-files/30772111/13163026_2560_1440_60fps.mp4";
+            //Destination = @"D:\FilesForProject\DestinationFolder\video.mp4";
+            //Source = "https://videos.pexels.com/video-files/30772111/13163026_2560_1440_60fps.mp4";
             Threads = 1;
             ThreadNumberTextBox.Text = Threads + "";
             MainWindow = mainWindow;

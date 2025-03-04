@@ -1,20 +1,41 @@
-﻿using System.IO;
+﻿using System.ComponentModel;
+using System.IO;
 using System.Net.Http;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace HTTP_Application.Core
 {
-    public class ThreadHandler
+    public class ThreadHandler : INotifyPropertyChanged
     {
+        private ThreadStatus? status;
         public string? Source { get; set; }
         public string Destination { get; set; }
-        public ThreadStatus? Status { get; set; }
+        public ThreadStatus? Status
+        {
+            get => status;
+            set
+            {
+                if(status != value)
+                {
+                    status = value;
+                    OnPropertyChanged(nameof(Status));
+                }
+            }
+        }
         public ManualResetEvent ManualResetEvent { get; set; }
         public CancellationTokenSource Cts { get; set; }
         private CancellationToken token;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public ThreadHandler() 
         {
             ManualResetEvent = new(true);
+        }
+        private void OnPropertyChanged(string? name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
         public async Task Start()
         {
