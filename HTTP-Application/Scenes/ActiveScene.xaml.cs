@@ -1,10 +1,8 @@
 ﻿using HTTP_Application.Core;
 using System.Collections.ObjectModel;
-using System.Reflection.Metadata.Ecma335;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 
 namespace HTTP_Application.Scenes
 {
