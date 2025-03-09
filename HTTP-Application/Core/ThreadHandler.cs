@@ -46,11 +46,11 @@ namespace HTTP_Application.Core
                     MessageBox.Show(Destination);
 
                     token.ThrowIfCancellationRequested();
-                    byte[] buffer = await client.GetByteArrayAsync(Source, Cts.Token);
+                    byte[] buffer = await client.GetByteArrayAsync(Source, token);
                     ManualResetEvent.WaitOne();
 
                     token.ThrowIfCancellationRequested();
-                    await File.WriteAllBytesAsync(Destination, buffer, Cts.Token);
+                    await File.WriteAllBytesAsync(Destination, buffer, token);
                     ManualResetEvent.WaitOne();
 
                     await Task.Delay(10000);

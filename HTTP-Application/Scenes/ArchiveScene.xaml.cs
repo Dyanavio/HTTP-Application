@@ -26,7 +26,6 @@ namespace HTTP_Application.Scenes
             MainWindow = mainWindow;
             ArchivedThreads = new ObservableCollection<ThreadHandler>();
             DataContext = this;
-            
         }
     }
 }
