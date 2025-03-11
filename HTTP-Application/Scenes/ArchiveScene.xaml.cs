@@ -31,7 +31,7 @@ namespace HTTP_Application.Scenes
             DataContext = this;
         }
 
-        private void DeleteFile(object sender, System.Windows.RoutedEventArgs e)
+        private void DeleteFile(object sender, RoutedEventArgs e)
         {
             if (ThreadList.SelectedItems.Count == 0) return;
             List<ThreadHandler> toDelete = new();
