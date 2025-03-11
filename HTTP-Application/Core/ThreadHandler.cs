@@ -8,8 +8,20 @@ namespace HTTP_Application.Core
     public class ThreadHandler : INotifyPropertyChanged
     {
         private ThreadStatus? status;
+        private string destination;
         public string? Source { get; set; }
-        public string Destination { get; set; }
+        public string Destination 
+        {
+            get => destination; 
+            set
+            {
+                if(destination != value)
+                {
+                    destination = value;
+                    OnPropertyChanged(nameof(Destination));
+                }
+            }
+        }
         public ThreadStatus? Status
         {
             get => status;
